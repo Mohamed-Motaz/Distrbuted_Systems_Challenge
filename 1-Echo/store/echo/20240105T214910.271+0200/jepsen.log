@@ -1,0 +1,243 @@
+2024-01-05 21:49:10,295{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w echo --bin /Users/mohamed.elzien/go/bin/maelstrom-echo --node-count 1 --time-limit 10
+2024-01-05 21:49:10,346{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 1
+ :availability nil
+ :max-txn-length 4
+ :concurrency 1
+ :db
+ #object[maelstrom.db$db$reify__16142
+         "0x527e6bd3"
+         "maelstrom.db$db$reify__16142@527e6bd3"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "echo"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x3c634a04" "2024-01-05T21:49:10.271+02:00"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15251
+         "0x4b48be5c"
+         "maelstrom.net$jepsen_net$reify__15251@4b48be5c"]
+ :client
+ #object[maelstrom.workload.echo$client$reify__16863
+         "0x3fe8d57a"
+         "maelstrom.workload.echo$client$reify__16863@3fe8d57a"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x36573ec5"
+         "java.util.concurrent.CyclicBarrier@36573ec5"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 5
+ :checker
+ #object[jepsen.checker$compose$reify__11881
+         "0x10c26161"
+         "jepsen.checker$compose$reify__11881@10c26161"]
+ :argv
+ ("test"
+  "-w"
+  "echo"
+  "--bin"
+  "/Users/mohamed.elzien/go/bin/maelstrom-echo"
+  "--node-count"
+  "1"
+  "--time-limit"
+  "10")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16416@1ef6977b"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16397@674cd2da"]})
+ :nodes ["n0"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "/Users/mohamed.elzien/go/bin/maelstrom-echo"
+ :generator
+ (jepsen.generator.TimeLimit
+  {:limit 10000000000,
+   :cutoff nil,
+   :gen (jepsen.generator.Any
+         {:gens [(jepsen.generator.OnThreads
+                  {:f #{:nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                           "0x34d776eb"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__9167@34d776eb"],
+                   :gen nil})
+                 (jepsen.generator.OnThreads
+                  {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                           "0x60a3a0fa"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__9167@60a3a0fa"],
+                   :gen (jepsen.generator.Stagger
+                         {:dt 400000000,
+                          :next-time nil,
+                          :gen (jepsen.generator.EachThread
+                                {:fresh-gen #object[maelstrom.workload.echo$workload$fn__16882
+                                                    "0x17734113"
+                                                    "maelstrom.workload.echo$workload$fn__16882@17734113"],
+                                 :context-filters #object[clojure.core$promise$reify__8591
+                                                          "0x27aa700"
+                                                          {:status :pending,
+                                                           :val nil}],
+                                 :gens {}})})})]})})
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15254
+         "0xd15f98a"
+         "maelstrom.net$jepsen_os$reify__15254@d15f98a"]
+ :time-limit 10
+ :workload :echo
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2024-01-05 21:49:11,397{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2024-01-05 21:49:11,398{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2024-01-05 21:49:11,399{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2024-01-05 21:49:11,401{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2024-01-05 21:49:11,402{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2024-01-05 21:49:11,402{GMT}	INFO	[jepsen node n0] maelstrom.process: launching /Users/mohamed.elzien/go/bin/maelstrom-echo []
+2024-01-05 21:49:11,427{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2024-01-05 21:49:11,436{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 13"
+2024-01-05 21:49:11,440{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 13", :in_reply_to 1, :msg_id 1, :type "echo_ok"}
+2024-01-05 21:49:11,825{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 37"
+2024-01-05 21:49:11,827{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 37", :in_reply_to 2, :msg_id 2, :type "echo_ok"}
+2024-01-05 21:49:12,006{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 94"
+2024-01-05 21:49:12,010{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 94", :in_reply_to 3, :msg_id 3, :type "echo_ok"}
+2024-01-05 21:49:12,175{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 32"
+2024-01-05 21:49:12,179{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 32", :in_reply_to 4, :msg_id 4, :type "echo_ok"}
+2024-01-05 21:49:12,570{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 67"
+2024-01-05 21:49:12,573{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 67", :in_reply_to 5, :msg_id 5, :type "echo_ok"}
+2024-01-05 21:49:12,866{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 107"
+2024-01-05 21:49:12,870{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 107", :in_reply_to 6, :msg_id 6, :type "echo_ok"}
+2024-01-05 21:49:13,048{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 72"
+2024-01-05 21:49:13,052{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 72", :in_reply_to 7, :msg_id 7, :type "echo_ok"}
+2024-01-05 21:49:13,235{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 103"
+2024-01-05 21:49:13,239{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 103", :in_reply_to 8, :msg_id 8, :type "echo_ok"}
+2024-01-05 21:49:13,282{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 21"
+2024-01-05 21:49:13,284{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 21", :in_reply_to 9, :msg_id 9, :type "echo_ok"}
+2024-01-05 21:49:13,657{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 31"
+2024-01-05 21:49:13,661{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 31", :in_reply_to 10, :msg_id 10, :type "echo_ok"}
+2024-01-05 21:49:13,691{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 82"
+2024-01-05 21:49:13,693{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 82", :in_reply_to 11, :msg_id 11, :type "echo_ok"}
+2024-01-05 21:49:14,065{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 17"
+2024-01-05 21:49:14,067{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 17", :in_reply_to 12, :msg_id 12, :type "echo_ok"}
+2024-01-05 21:49:14,233{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 22"
+2024-01-05 21:49:14,237{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 22", :in_reply_to 13, :msg_id 13, :type "echo_ok"}
+2024-01-05 21:49:14,522{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 29"
+2024-01-05 21:49:14,527{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 29", :in_reply_to 14, :msg_id 14, :type "echo_ok"}
+2024-01-05 21:49:14,832{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 112"
+2024-01-05 21:49:14,835{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 112", :in_reply_to 15, :msg_id 15, :type "echo_ok"}
+2024-01-05 21:49:14,962{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 77"
+2024-01-05 21:49:14,964{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 77", :in_reply_to 16, :msg_id 16, :type "echo_ok"}
+2024-01-05 21:49:15,014{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 112"
+2024-01-05 21:49:15,015{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 112", :in_reply_to 17, :msg_id 17, :type "echo_ok"}
+2024-01-05 21:49:15,148{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 0"
+2024-01-05 21:49:15,150{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 0", :in_reply_to 18, :msg_id 18, :type "echo_ok"}
+2024-01-05 21:49:15,395{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 77"
+2024-01-05 21:49:15,398{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 77", :in_reply_to 19, :msg_id 19, :type "echo_ok"}
+2024-01-05 21:49:15,526{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 82"
+2024-01-05 21:49:15,529{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 82", :in_reply_to 20, :msg_id 20, :type "echo_ok"}
+2024-01-05 21:49:15,833{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 103"
+2024-01-05 21:49:15,835{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 103", :in_reply_to 21, :msg_id 21, :type "echo_ok"}
+2024-01-05 21:49:16,142{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 14"
+2024-01-05 21:49:16,146{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 14", :in_reply_to 22, :msg_id 22, :type "echo_ok"}
+2024-01-05 21:49:16,409{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 82"
+2024-01-05 21:49:16,414{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 82", :in_reply_to 23, :msg_id 23, :type "echo_ok"}
+2024-01-05 21:49:16,671{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 18"
+2024-01-05 21:49:16,674{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 18", :in_reply_to 24, :msg_id 24, :type "echo_ok"}
+2024-01-05 21:49:16,755{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 109"
+2024-01-05 21:49:16,758{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 109", :in_reply_to 25, :msg_id 25, :type "echo_ok"}
+2024-01-05 21:49:16,898{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 59"
+2024-01-05 21:49:16,900{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 59", :in_reply_to 26, :msg_id 26, :type "echo_ok"}
+2024-01-05 21:49:17,025{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 47"
+2024-01-05 21:49:17,028{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 47", :in_reply_to 27, :msg_id 27, :type "echo_ok"}
+2024-01-05 21:49:17,341{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 42"
+2024-01-05 21:49:17,345{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 42", :in_reply_to 28, :msg_id 28, :type "echo_ok"}
+2024-01-05 21:49:17,608{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 92"
+2024-01-05 21:49:17,613{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 92", :in_reply_to 29, :msg_id 29, :type "echo_ok"}
+2024-01-05 21:49:18,011{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 59"
+2024-01-05 21:49:18,014{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 59", :in_reply_to 30, :msg_id 30, :type "echo_ok"}
+2024-01-05 21:49:18,153{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 76"
+2024-01-05 21:49:18,157{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 76", :in_reply_to 31, :msg_id 31, :type "echo_ok"}
+2024-01-05 21:49:18,512{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 92"
+2024-01-05 21:49:18,515{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 92", :in_reply_to 32, :msg_id 32, :type "echo_ok"}
+2024-01-05 21:49:18,662{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 0"
+2024-01-05 21:49:18,668{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 0", :in_reply_to 33, :msg_id 33, :type "echo_ok"}
+2024-01-05 21:49:19,027{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 62"
+2024-01-05 21:49:19,030{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 62", :in_reply_to 34, :msg_id 34, :type "echo_ok"}
+2024-01-05 21:49:19,239{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 33"
+2024-01-05 21:49:19,243{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 33", :in_reply_to 35, :msg_id 35, :type "echo_ok"}
+2024-01-05 21:49:19,445{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 116"
+2024-01-05 21:49:19,447{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 116", :in_reply_to 36, :msg_id 36, :type "echo_ok"}
+2024-01-05 21:49:19,785{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 59"
+2024-01-05 21:49:19,788{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 59", :in_reply_to 37, :msg_id 37, :type "echo_ok"}
+2024-01-05 21:49:19,849{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 127"
+2024-01-05 21:49:19,851{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 127", :in_reply_to 38, :msg_id 38, :type "echo_ok"}
+2024-01-05 21:49:20,012{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 11"
+2024-01-05 21:49:20,014{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 11", :in_reply_to 39, :msg_id 39, :type "echo_ok"}
+2024-01-05 21:49:20,305{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 36"
+2024-01-05 21:49:20,308{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 36", :in_reply_to 40, :msg_id 40, :type "echo_ok"}
+2024-01-05 21:49:20,584{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 69"
+2024-01-05 21:49:20,587{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 69", :in_reply_to 41, :msg_id 41, :type "echo_ok"}
+2024-01-05 21:49:20,753{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 21"
+2024-01-05 21:49:20,756{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 21", :in_reply_to 42, :msg_id 42, :type "echo_ok"}
+2024-01-05 21:49:20,835{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 108"
+2024-01-05 21:49:20,839{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 108", :in_reply_to 43, :msg_id 43, :type "echo_ok"}
+2024-01-05 21:49:20,943{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 126"
+2024-01-05 21:49:20,944{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 126", :in_reply_to 44, :msg_id 44, :type "echo_ok"}
+2024-01-05 21:49:21,227{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 2"
+2024-01-05 21:49:21,229{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 2", :in_reply_to 45, :msg_id 45, :type "echo_ok"}
+2024-01-05 21:49:21,250{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2024-01-05 21:49:21,306{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2024-01-05 21:49:22,435{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2024-01-05 21:49:22,437{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2024-01-05 21:49:31,387{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2024-01-05 21:49:31,393{GMT}	INFO	[jepsen results] jepsen.store: Wrote /Users/mohamed.elzien/Desktop/Distrbuted_Systems_Challenge/1-Echo/store/echo/20240105T214910.271+0200/results.edn
+2024-01-05 21:49:31,407{GMT}	INFO	[jepsen test runner] jepsen.core: {:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :timeline {:valid? true},
+ :exceptions {:valid? true},
+ :stats {:valid? true,
+         :count 45,
+         :ok-count 45,
+         :fail-count 0,
+         :info-count 0,
+         :by-f {:echo {:valid? true,
+                       :count 45,
+                       :ok-count 45,
+                       :fail-count 0,
+                       :info-count 0}}},
+ :availability {:valid? true, :ok-fraction 1.0},
+ :net {:all {:send-count 92,
+             :recv-count 92,
+             :msg-count 92,
+             :msgs-per-op 2.0444446},
+       :clients {:send-count 92, :recv-count 92, :msg-count 92},
+       :servers {:send-count 0,
+                 :recv-count 0,
+                 :msg-count 0,
+                 :msgs-per-op 0.0},
+       :valid? true},
+ :workload {:valid? true, :errors ()},
+ :valid? true}
+
+
+Everything looks good! ヽ(‘ー`)ノ

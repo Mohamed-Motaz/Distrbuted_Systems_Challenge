@@ -1,0 +1,195 @@
+2024/01/06 12:05:51 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2024/01/06 12:05:51 Node n0 initialized
+2024/01/06 12:05:51 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/01/06 12:05:51 Received {c2 n0 {"echo":"Please echo 4","type":"echo","msg_id":1}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 52 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 125]}
+ body: map[echo:Please echo 4 msg_id:1 type:echo_ok]
+2024/01/06 12:05:51 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 4","in_reply_to":1,"msg_id":1,"type":"echo_ok"}}
+2024/01/06 12:05:51 Received {c2 n0 {"echo":"Please echo 101","type":"echo","msg_id":2}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 48 49 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 125]}
+ body: map[echo:Please echo 101 msg_id:2 type:echo_ok]
+2024/01/06 12:05:51 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 101","in_reply_to":2,"msg_id":2,"type":"echo_ok"}}
+2024/01/06 12:05:52 Received {c2 n0 {"echo":"Please echo 120","type":"echo","msg_id":3}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 50 48 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 125]}
+ body: map[echo:Please echo 120 msg_id:3 type:echo_ok]
+2024/01/06 12:05:52 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 120","in_reply_to":3,"msg_id":3,"type":"echo_ok"}}
+2024/01/06 12:05:52 Received {c2 n0 {"echo":"Please echo 88","type":"echo","msg_id":4}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 56 56 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 125]}
+ body: map[echo:Please echo 88 msg_id:4 type:echo_ok]
+2024/01/06 12:05:52 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 88","in_reply_to":4,"msg_id":4,"type":"echo_ok"}}
+2024/01/06 12:05:52 Received {c2 n0 {"echo":"Please echo 32","type":"echo","msg_id":5}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 51 50 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 53 125]}
+ body: map[echo:Please echo 32 msg_id:5 type:echo_ok]
+2024/01/06 12:05:52 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 32","in_reply_to":5,"msg_id":5,"type":"echo_ok"}}
+2024/01/06 12:05:53 Received {c2 n0 {"echo":"Please echo 21","type":"echo","msg_id":6}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 50 49 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 54 125]}
+ body: map[echo:Please echo 21 msg_id:6 type:echo_ok]
+2024/01/06 12:05:53 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 21","in_reply_to":6,"msg_id":6,"type":"echo_ok"}}
+2024/01/06 12:05:53 Received {c2 n0 {"echo":"Please echo 95","type":"echo","msg_id":7}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 57 53 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 55 125]}
+ body: map[echo:Please echo 95 msg_id:7 type:echo_ok]
+2024/01/06 12:05:53 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 95","in_reply_to":7,"msg_id":7,"type":"echo_ok"}}
+2024/01/06 12:05:53 Received {c2 n0 {"echo":"Please echo 98","type":"echo","msg_id":8}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 57 56 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 56 125]}
+ body: map[echo:Please echo 98 msg_id:8 type:echo_ok]
+2024/01/06 12:05:53 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 98","in_reply_to":8,"msg_id":8,"type":"echo_ok"}}
+2024/01/06 12:05:53 Received {c2 n0 {"echo":"Please echo 46","type":"echo","msg_id":9}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 52 54 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 57 125]}
+ body: map[echo:Please echo 46 msg_id:9 type:echo_ok]
+2024/01/06 12:05:53 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 46","in_reply_to":9,"msg_id":9,"type":"echo_ok"}}
+2024/01/06 12:05:53 Received {c2 n0 {"echo":"Please echo 15","type":"echo","msg_id":10}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 53 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 48 125]}
+ body: map[echo:Please echo 15 msg_id:10 type:echo_ok]
+2024/01/06 12:05:53 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 15","in_reply_to":10,"msg_id":10,"type":"echo_ok"}}
+2024/01/06 12:05:54 Received {c2 n0 {"echo":"Please echo 59","type":"echo","msg_id":11}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 53 57 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 49 125]}
+ body: map[echo:Please echo 59 msg_id:11 type:echo_ok]
+2024/01/06 12:05:54 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 59","in_reply_to":11,"msg_id":11,"type":"echo_ok"}}
+2024/01/06 12:05:54 Received {c2 n0 {"echo":"Please echo 125","type":"echo","msg_id":12}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 50 53 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 50 125]}
+ body: map[echo:Please echo 125 msg_id:12 type:echo_ok]
+2024/01/06 12:05:54 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 125","in_reply_to":12,"msg_id":12,"type":"echo_ok"}}
+2024/01/06 12:05:54 Received {c2 n0 {"echo":"Please echo 68","type":"echo","msg_id":13}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 54 56 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 51 125]}
+ body: map[echo:Please echo 68 msg_id:13 type:echo_ok]
+2024/01/06 12:05:54 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 68","in_reply_to":13,"msg_id":13,"type":"echo_ok"}}
+2024/01/06 12:05:54 Received {c2 n0 {"echo":"Please echo 8","type":"echo","msg_id":14}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 56 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 52 125]}
+ body: map[echo:Please echo 8 msg_id:14 type:echo_ok]
+2024/01/06 12:05:54 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 8","in_reply_to":14,"msg_id":14,"type":"echo_ok"}}
+2024/01/06 12:05:54 Received {c2 n0 {"echo":"Please echo 21","type":"echo","msg_id":15}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 50 49 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 53 125]}
+ body: map[echo:Please echo 21 msg_id:15 type:echo_ok]
+2024/01/06 12:05:54 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 21","in_reply_to":15,"msg_id":15,"type":"echo_ok"}}
+2024/01/06 12:05:55 Received {c2 n0 {"echo":"Please echo 16","type":"echo","msg_id":16}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 54 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 54 125]}
+ body: map[echo:Please echo 16 msg_id:16 type:echo_ok]
+2024/01/06 12:05:55 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 16","in_reply_to":16,"msg_id":16,"type":"echo_ok"}}
+2024/01/06 12:05:55 Received {c2 n0 {"echo":"Please echo 45","type":"echo","msg_id":17}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 52 53 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 55 125]}
+ body: map[echo:Please echo 45 msg_id:17 type:echo_ok]
+2024/01/06 12:05:55 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 45","in_reply_to":17,"msg_id":17,"type":"echo_ok"}}
+2024/01/06 12:05:55 Received {c2 n0 {"echo":"Please echo 113","type":"echo","msg_id":18}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 49 51 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 56 125]}
+ body: map[echo:Please echo 113 msg_id:18 type:echo_ok]
+2024/01/06 12:05:55 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 113","in_reply_to":18,"msg_id":18,"type":"echo_ok"}}
+2024/01/06 12:05:55 Received {c2 n0 {"echo":"Please echo 12","type":"echo","msg_id":19}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 50 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 49 57 125]}
+ body: map[echo:Please echo 12 msg_id:19 type:echo_ok]
+2024/01/06 12:05:55 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 12","in_reply_to":19,"msg_id":19,"type":"echo_ok"}}
+2024/01/06 12:05:55 Received {c2 n0 {"echo":"Please echo 124","type":"echo","msg_id":20}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 50 52 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 48 125]}
+ body: map[echo:Please echo 124 msg_id:20 type:echo_ok]
+2024/01/06 12:05:55 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 124","in_reply_to":20,"msg_id":20,"type":"echo_ok"}}
+2024/01/06 12:05:56 Received {c2 n0 {"echo":"Please echo 120","type":"echo","msg_id":21}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 50 48 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 49 125]}
+ body: map[echo:Please echo 120 msg_id:21 type:echo_ok]
+2024/01/06 12:05:56 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 120","in_reply_to":21,"msg_id":21,"type":"echo_ok"}}
+2024/01/06 12:05:56 Received {c2 n0 {"echo":"Please echo 110","type":"echo","msg_id":22}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 49 48 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 50 125]}
+ body: map[echo:Please echo 110 msg_id:22 type:echo_ok]
+2024/01/06 12:05:56 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 110","in_reply_to":22,"msg_id":22,"type":"echo_ok"}}
+2024/01/06 12:05:56 Received {c2 n0 {"echo":"Please echo 18","type":"echo","msg_id":23}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 56 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 51 125]}
+ body: map[echo:Please echo 18 msg_id:23 type:echo_ok]
+2024/01/06 12:05:56 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 18","in_reply_to":23,"msg_id":23,"type":"echo_ok"}}
+2024/01/06 12:05:56 Received {c2 n0 {"echo":"Please echo 45","type":"echo","msg_id":24}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 52 53 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 52 125]}
+ body: map[echo:Please echo 45 msg_id:24 type:echo_ok]
+2024/01/06 12:05:56 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 45","in_reply_to":24,"msg_id":24,"type":"echo_ok"}}
+2024/01/06 12:05:56 Received {c2 n0 {"echo":"Please echo 41","type":"echo","msg_id":25}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 52 49 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 53 125]}
+ body: map[echo:Please echo 41 msg_id:25 type:echo_ok]
+2024/01/06 12:05:56 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 41","in_reply_to":25,"msg_id":25,"type":"echo_ok"}}
+2024/01/06 12:05:57 Received {c2 n0 {"echo":"Please echo 61","type":"echo","msg_id":26}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 54 49 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 54 125]}
+ body: map[echo:Please echo 61 msg_id:26 type:echo_ok]
+2024/01/06 12:05:57 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 61","in_reply_to":26,"msg_id":26,"type":"echo_ok"}}
+2024/01/06 12:05:57 Received {c2 n0 {"echo":"Please echo 98","type":"echo","msg_id":27}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 57 56 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 55 125]}
+ body: map[echo:Please echo 98 msg_id:27 type:echo_ok]
+2024/01/06 12:05:57 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 98","in_reply_to":27,"msg_id":27,"type":"echo_ok"}}
+2024/01/06 12:05:58 Received {c2 n0 {"echo":"Please echo 77","type":"echo","msg_id":28}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 55 55 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 56 125]}
+ body: map[echo:Please echo 77 msg_id:28 type:echo_ok]
+2024/01/06 12:05:58 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 77","in_reply_to":28,"msg_id":28,"type":"echo_ok"}}
+2024/01/06 12:05:58 Received {c2 n0 {"echo":"Please echo 77","type":"echo","msg_id":29}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 55 55 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 50 57 125]}
+ body: map[echo:Please echo 77 msg_id:29 type:echo_ok]
+2024/01/06 12:05:58 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 77","in_reply_to":29,"msg_id":29,"type":"echo_ok"}}
+2024/01/06 12:05:58 Received {c2 n0 {"echo":"Please echo 22","type":"echo","msg_id":30}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 50 50 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 48 125]}
+ body: map[echo:Please echo 22 msg_id:30 type:echo_ok]
+2024/01/06 12:05:58 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 22","in_reply_to":30,"msg_id":30,"type":"echo_ok"}}
+2024/01/06 12:05:58 Received {c2 n0 {"echo":"Please echo 54","type":"echo","msg_id":31}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 53 52 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 49 125]}
+ body: map[echo:Please echo 54 msg_id:31 type:echo_ok]
+2024/01/06 12:05:58 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 54","in_reply_to":31,"msg_id":31,"type":"echo_ok"}}
+2024/01/06 12:05:58 Received {c2 n0 {"echo":"Please echo 98","type":"echo","msg_id":32}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 57 56 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 50 125]}
+ body: map[echo:Please echo 98 msg_id:32 type:echo_ok]
+2024/01/06 12:05:58 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 98","in_reply_to":32,"msg_id":32,"type":"echo_ok"}}
+2024/01/06 12:05:59 Received {c2 n0 {"echo":"Please echo 53","type":"echo","msg_id":33}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 53 51 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 51 125]}
+ body: map[echo:Please echo 53 msg_id:33 type:echo_ok]
+2024/01/06 12:05:59 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 53","in_reply_to":33,"msg_id":33,"type":"echo_ok"}}
+2024/01/06 12:05:59 Received {c2 n0 {"echo":"Please echo 99","type":"echo","msg_id":34}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 57 57 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 52 125]}
+ body: map[echo:Please echo 99 msg_id:34 type:echo_ok]
+2024/01/06 12:05:59 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 99","in_reply_to":34,"msg_id":34,"type":"echo_ok"}}
+2024/01/06 12:05:59 Received {c2 n0 {"echo":"Please echo 127","type":"echo","msg_id":35}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 50 55 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 53 125]}
+ body: map[echo:Please echo 127 msg_id:35 type:echo_ok]
+2024/01/06 12:05:59 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 127","in_reply_to":35,"msg_id":35,"type":"echo_ok"}}
+2024/01/06 12:05:59 Received {c2 n0 {"echo":"Please echo 126","type":"echo","msg_id":36}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 50 54 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 54 125]}
+ body: map[echo:Please echo 126 msg_id:36 type:echo_ok]
+2024/01/06 12:05:59 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 126","in_reply_to":36,"msg_id":36,"type":"echo_ok"}}
+2024/01/06 12:06:00 Received {c2 n0 {"echo":"Please echo 95","type":"echo","msg_id":37}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 57 53 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 55 125]}
+ body: map[echo:Please echo 95 msg_id:37 type:echo_ok]
+2024/01/06 12:06:00 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 95","in_reply_to":37,"msg_id":37,"type":"echo_ok"}}
+2024/01/06 12:06:00 Received {c2 n0 {"echo":"Please echo 3","type":"echo","msg_id":38}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 51 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 56 125]}
+ body: map[echo:Please echo 3 msg_id:38 type:echo_ok]
+2024/01/06 12:06:00 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 3","in_reply_to":38,"msg_id":38,"type":"echo_ok"}}
+2024/01/06 12:06:00 Received {c2 n0 {"echo":"Please echo 14","type":"echo","msg_id":39}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 52 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 51 57 125]}
+ body: map[echo:Please echo 14 msg_id:39 type:echo_ok]
+2024/01/06 12:06:00 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 14","in_reply_to":39,"msg_id":39,"type":"echo_ok"}}
+2024/01/06 12:06:00 Received {c2 n0 {"echo":"Please echo 23","type":"echo","msg_id":40}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 50 51 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 48 125]}
+ body: map[echo:Please echo 23 msg_id:40 type:echo_ok]
+2024/01/06 12:06:00 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 23","in_reply_to":40,"msg_id":40,"type":"echo_ok"}}
+2024/01/06 12:06:00 Received {c2 n0 {"echo":"Please echo 65","type":"echo","msg_id":41}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 54 53 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 49 125]}
+ body: map[echo:Please echo 65 msg_id:41 type:echo_ok]
+2024/01/06 12:06:00 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 65","in_reply_to":41,"msg_id":41,"type":"echo_ok"}}
+2024/01/06 12:06:00 Received {c2 n0 {"echo":"Please echo 32","type":"echo","msg_id":42}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 51 50 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 50 125]}
+ body: map[echo:Please echo 32 msg_id:42 type:echo_ok]
+2024/01/06 12:06:00 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 32","in_reply_to":42,"msg_id":42,"type":"echo_ok"}}
+2024/01/06 12:06:01 Received {c2 n0 {"echo":"Please echo 44","type":"echo","msg_id":43}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 52 52 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 51 125]}
+ body: map[echo:Please echo 44 msg_id:43 type:echo_ok]
+2024/01/06 12:06:01 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 44","in_reply_to":43,"msg_id":43,"type":"echo_ok"}}
+2024/01/06 12:06:01 Received {c2 n0 {"echo":"Please echo 30","type":"echo","msg_id":44}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 51 48 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 52 125]}
+ body: map[echo:Please echo 30 msg_id:44 type:echo_ok]
+2024/01/06 12:06:01 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 30","in_reply_to":44,"msg_id":44,"type":"echo_ok"}}
+2024/01/06 12:06:01 Received {c2 n0 {"echo":"Please echo 72","type":"echo","msg_id":45}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 55 50 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 53 125]}
+ body: map[echo:Please echo 72 msg_id:45 type:echo_ok]
+2024/01/06 12:06:01 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 72","in_reply_to":45,"msg_id":45,"type":"echo_ok"}}
+2024/01/06 12:06:01 Received {c2 n0 {"echo":"Please echo 22","type":"echo","msg_id":46}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 50 50 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 54 125]}
+ body: map[echo:Please echo 22 msg_id:46 type:echo_ok]
+2024/01/06 12:06:01 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 22","in_reply_to":46,"msg_id":46,"type":"echo_ok"}}
+2024/01/06 12:06:01 Received {c2 n0 {"echo":"Please echo 4","type":"echo","msg_id":47}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 52 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 55 125]}
+ body: map[echo:Please echo 4 msg_id:47 type:echo_ok]
+2024/01/06 12:06:01 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 4","in_reply_to":47,"msg_id":47,"type":"echo_ok"}}
+2024/01/06 12:06:01 Received {c2 n0 {"echo":"Please echo 114","type":"echo","msg_id":48}}
+msg: {Src:c2 Dest:n0 Body:[123 34 101 99 104 111 34 58 34 80 108 101 97 115 101 32 101 99 104 111 32 49 49 52 34 44 34 116 121 112 101 34 58 34 101 99 104 111 34 44 34 109 115 103 95 105 100 34 58 52 56 125]}
+ body: map[echo:Please echo 114 msg_id:48 type:echo_ok]
+2024/01/06 12:06:01 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 114","in_reply_to":48,"msg_id":48,"type":"echo_ok"}}

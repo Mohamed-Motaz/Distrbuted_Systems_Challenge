@@ -1,0 +1,7 @@
+2024/01/06 12:01:48 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2024/01/06 12:01:48 Node n0 initialized
+2024/01/06 12:01:48 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/01/06 12:01:48 Received {c2 n0 {"echo":"Please echo 44","type":"echo","msg_id":1}}
+2024/01/06 12:01:48 Sent {"src":"n0","dest":"c2","body":{"echo":"Please echo 44","in_reply_to":1,"msg_id":1,"type":"echo_ok"}}
+2024/01/06 12:01:53 Received {c3 n0 {"echo":"Please echo 82","type":"echo","msg_id":1}}
+2024/01/06 12:01:53 Sent {"src":"n0","dest":"c3","body":{"echo":"Please echo 82","in_reply_to":1,"msg_id":1,"type":"echo_ok"}}
