@@ -1,0 +1,140 @@
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"fmt"
+	"log"
+	"os"
+	"sync/atomic"
+
+	maelstrom "github.com/jepsen-io/maelstrom/demo/go"
+)
+
+// go install . && ~/Downloads/maelstrom/maelstrom test -w unique-ids --bin ~/go/bin/maelstrom-unique-ids --time-limit 30 --rate 1000 --node-count 3 --availability total --nemesis partition
+
+//Solution is to always make sure that you are not within the majority n / 2 + 1, where n is the total number of node
+//Protocol:
+//Receive generate message
+//Send generate_priv to all present nodes
+//Make sure that at least majority (including me) respond
+//If not, return error code 11 -> temporarily-unavailable
+//Else, increment my id, and take the maximum id of all present ids
+//Return the new Id
+
+//Edge case:
+//I receive a generate request, so I increment my Id
+//I then receive a generate_priv request at the same time, and I return my new ID (recently incremented)
+//Issue in this case is that the same ID can possibly be used by 2 requests
+//Solution:
+//Always increment the ID in cases of generate_priv and generate, to avoid locking the whole handlers
+
+const (
+	PRIV_ADDR = "generate_priv"
+)
+
+var UNIQUE_ID atomic.Uint64 = atomic.Uint64{}
+
+func Init() {
+	UNIQUE_ID.Store(0)
+}
+
+func main() {
+	Init()
+
+	n := maelstrom.NewNode()
+
+	n.Handle(PRIV_ADDR, func(msg maelstrom.Message) error {
+		// Unmarshal the message body as an loosely-typed map.
+		var body map[string]any
+		if err := json.Unmarshal(msg.Body, &body); err != nil {
+			return err
+		}
+
+		body["type"] = fmt.Sprintf("%s_ok", PRIV_ADDR)
+		body["id"] = IncrAndGetId()
+
+		return n.Reply(msg, body)
+	})
+
+	n.Handle("generate", func(msg maelstrom.Message) error {
+		// Unmarshal the message body as an loosely-typed map.
+		var body map[string]any
+		if err := json.Unmarshal(msg.Body, &body); err != nil {
+			return err
+		}
+
+		// Update the message type to return back.
+		body["type"] = "generate_ok"
+		var myId uint64
+		msgCopy := DeepCopy(body)
+		msgCopy["type"] = PRIV_ADDR
+		for {
+			ok, id := Try(n, body)
+			if ok {
+				myId = id
+				break
+			}
+		}
+
+		body["id"] = myId
+
+		// Echo the original message back with the updated message type.
+		return n.Reply(msg, body)
+	})
+
+	if err := n.Run(); err != nil {
+		log.Fatal(err)
+		os.Exit(1)
+
+	}
+}
+
+func Try(n *maelstrom.Node, msgCopy map[string]any) (bool, uint64) {
+	myId := IncrAndGetId()
+
+	nodesCtr := len(n.NodeIDs())
+	majorityCtr := nodesCtr/2 + 1
+	nodesReachable := 1 //me
+	//attempt to contact all nodes
+	for _, v := range n.NodeIDs() {
+		if v == n.ID() {
+			continue
+		}
+
+		res, err := n.SyncRPC(context.Background(), v, msgCopy)
+		if err != nil { //unreachable node probably
+			continue
+		}
+
+		var body map[string]any
+		if err := json.Unmarshal(res.Body, &body); err != nil {
+			return false, 0
+		}
+
+		nodesReachable++
+		myId = max(myId, uint64(body["id"].(float64)))
+	}
+
+	if nodesReachable >= majorityCtr {
+		UNIQUE_ID.Store(myId) //store the new received ID
+		return true, myId
+	}
+
+	return false, 0
+}
+
+func DeepCopy(old map[string]any) map[string]any {
+	newCopy := make(map[string]any)
+
+	for k, v := range old {
+		newCopy[k] = v
+	}
+
+	return newCopy
+}
+
+func IncrAndGetId() uint64 {
+	UNIQUE_ID.Add(1)
+	return UNIQUE_ID.Load()
+}
