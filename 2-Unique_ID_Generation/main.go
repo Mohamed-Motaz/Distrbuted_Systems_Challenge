@@ -27,11 +27,7 @@ var once sync.Once = sync.Once{}
 func Init(n *maelstrom.Node) {
 	id, _ := strconv.Atoi(n.ID()[1:])
 	start := math.MaxInt64 * (float64(id) / float64(len(n.NodeIDs())))
-	fmt.Fprintf(os.Stderr, "Starts for node %+v is: %+v\n", n.ID(), int64(start))
-
 	UNIQUE_ID.Store(int64(start))
-
-	fmt.Fprintf(os.Stderr, "Final start: %+v\n", UNIQUE_ID.Load())
 }
 
 func main() {
